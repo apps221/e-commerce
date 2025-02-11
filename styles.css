@@ -267,6 +267,7 @@ button:active {
    padding-top: 8vw; /*has to be based on vw because wave is based on vw*/
     background-color: rgba(115, 66, 214, 0.1);
 }
+  
 .books {
     display: flex;
     flex-wrap: wrap;
@@ -275,21 +276,25 @@ button:active {
 .book {
     width: 25%;
     padding: 24px;
-}
+    align-self: flex-end;
+  }  
 .book__img {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-}
-.book__img--wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 2 / 3;
+    max-height: 380px;
+    transition: all 300ms ease;
+    cursor: not-allowed;
+    /* Added after tutorial to maintain image aspect ratio */
+    object-fit: contain;
+    object-position: left;
+  }
+  
+  .book__img--wrapper {
+    margin-bottom: 8px;
+    border-radius: 4px;
     overflow: hidden;
-  /*added to make figure and image height equal*/
-}
+    display: flex;
+  }
+  
+
 .book:hover .book__img {
     transform: scale(1.03);
 }
@@ -384,7 +389,23 @@ select {
   font-size: 60px;
   color: #7342d6;
 }
-
+.books__loading--spinner {
+    display: none !important;
+}
+.books__loading .books__loading--spinner {
+display: block !important;
+}
+.fa-spinner {
+    animation: rotate 600ms infinite linear;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+    transform: rotate(360deg);
+}
+}
 /*SMALL PHONES, TABLTS, LARGE SMARTPHONES */
 @media (max-width: 768px) {
 .header__description {
