@@ -277,15 +277,18 @@ button:active {
     padding: 24px;
 }
 .book__img {
-    max-height: 380px;
-    transition: all 300ms ease;
-    cursor: not-allowed;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
 }
 .book__img--wrapper {
-    margin-bottom: 8px;
-    border-radius: 4px;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
     overflow: hidden;
-    display: flex; /*added to make figure and image height equal*/
+  /*added to make figure and image height equal*/
 }
 .book:hover .book__img {
     transform: scale(1.03);
@@ -381,6 +384,7 @@ select {
   font-size: 60px;
   color: #7342d6;
 }
+
 /*SMALL PHONES, TABLTS, LARGE SMARTPHONES */
 @media (max-width: 768px) {
 .header__description {
