@@ -1,4 +1,4 @@
-let books;
+let books; //undeclaring puts the value as undefined which is a falsy value so the first time function is called it will run getBooks()
 async function renderBooks(filter) {
   const booksWrapper = document.querySelector(".books");
   booksWrapper.classList += ' books__loading'
